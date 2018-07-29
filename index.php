@@ -16,6 +16,7 @@
 <body>
     <h1>SPACE. The Final Frontier</h1>
     <p>Blast off.</p>
+    <div id="photoDiv"></div>
     <!-- Scripts -->
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -25,5 +26,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+    <!-- JS for Flickr -->
+    <!-- TODO: Revise relative link when not testing locally -->
+    <script src="/js/supplement.js"></script>
 </body>
 </html>
