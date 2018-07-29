@@ -27,8 +27,9 @@ $(document).ready(function() {
 
     function displayPhotos() {
         for (let i = 0; i < photos.length; i++) {
+            let title = photos[i].title;
             let imgURL = 'https://farm' + photos[i].farm + '.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_' + photos[i].secret + '.jpg';
-            $('#photoDiv').append('<img src = "' + imgURL + '">');
+            $('#photoDiv').append('<img src = "' + imgURL + '" alt = "' + title + '" title = "' + title + '">');
         }
     }
 
