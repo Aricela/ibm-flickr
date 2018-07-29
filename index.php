@@ -27,7 +27,6 @@
     <!-- MDB core JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
     <!-- JS for Flickr -->
-    <!-- TODO: Revise relative link when not testing locally -->
-    <script src="/js/supplement.js"></script>
+    <script src="js/supplement.js"></script>
 </body>
 </html>
