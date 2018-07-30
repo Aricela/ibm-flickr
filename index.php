@@ -12,9 +12,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
 </head>
 <body>
-    <h1>SPACE. The Final Frontier</h1>
+    <header>
+        <h1>SPACE</h1>
+        <h2>The Final Frontier</h2>
+    </header>
+
     <p>Blast off.</p>
     <div id="photoDiv"></div>
     <!-- Scripts -->
