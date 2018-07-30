@@ -3,7 +3,7 @@ $(document).ready(function() {
     var nasaId = "24662369@N07";
     var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=" + apiKey + "&user_id=" + nasaId + "&format=json&nojsoncallback=1";
     var photos = [];
-    var tags = [];
+    var photosMetadata = [];
 
     // Get photos
     $.get(flickrStr, function(data){
@@ -26,6 +26,7 @@ $(document).ready(function() {
                 farm: data.photos.photo[i].farm,
                 title: data.photos.photo[i].title
             };
+            getMetadata(photoObj);
             photos.push(photoObj);
         }
     }
@@ -40,18 +41,41 @@ $(document).ready(function() {
     }
 
     // Get metadata for a photo
-    function getMetadata(photoID) {
-        let infoStr = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=a5e95177da353f58113fd60296e1d250&photo_id=" + photoID + "&format=json&nojsoncallback=1";
-        return infoStr;
+    function getMetadata(photoObj) {
+        let infoStr = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=a5e95177da353f58113fd60296e1d250&photo_id=" + photoObj.id + "&format=json&nojsoncallback=1";
+        $.get(infoStr, function(data) {
+            photoObj["description"] = data.photo.description;
+            photoObj["takenDate"] = data.photo.dates.taken;
+            photoObj["views"] = data.photo.views;
+        });
     }
 
     // When user clicks on one of choices in the miscellaneous dropdown, sort by the choice
     $('#miscSort').change(function() {
         var selection = this.value;  // get selected value
         console.log(photos.length);
-
+        switch (selection) {
+            default:
+                // Sort by date (most recent first)
+                var test="test";
+                break;
+            case "popularity":
+                // Sort by views, in descending order
+                photos.sort(function(a,b) {return b.views - a.views});
+                break;
+            case "title":
+                // Sort by title string
+                console.log(photos);
+                photos.sort(function(a, b) {
+                    var x = a.title.toLowerCase();
+                    var y = b.title.toLowerCase();
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                });
+        }
         // Sort by string (for title)
-        if (selection == "title") {
+        /*if (selection == "title") {
             console.log(photos);
             photos.sort(function(a, b) {
                 var x = a.title.toLowerCase();
@@ -63,7 +87,7 @@ $(document).ready(function() {
             console.log(photos);
         } else {
             console.log(selection);
-        }
+        }*/
 
         // Empty photoDiv to prepare for sorted photos
         document.getElementById('photoDiv').innerHTML = "";
