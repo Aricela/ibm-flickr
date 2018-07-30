@@ -40,19 +40,19 @@
                         <div class="topOption">
                             Show photos from album:
                             <!-- Album dropdown -->
-                            <select>
+                            <select id="albumFilter">
                                 <option value="all">All</option>
                                 <option value="album1">album1</option>
                             </select>
                         </div>
                         <div class="topOption">
                             Photos sorted by
-                            <!-- Misc filters dropdown -->
-                            <select>
-                                <option value="popularity">Popularity</option>
+                            <!-- Miscellaneous sort dropdown -->
+                            <select id="miscSort">
+                                <option value="popularity" selected="selected">Popularity</option>
                                 <option value="takenDateNew">Date taken (Newest first)</option>
                                 <option value="takenDateOld">Date taken (Oldest first)</option>
-                                <option value="alphabetical">Alphabetical (A-Z)</option>
+                                <option value="title">Title (A-Z)</option>
                             </select>
                         </div>
                     </div>

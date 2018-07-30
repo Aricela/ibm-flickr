@@ -33,4 +33,25 @@ $(document).ready(function() {
         }
     }
 
+    $('#miscSort').change(function() {
+        var selection = this.value;  // get selected value
+        console.log(photos.length);
+        if (selection == "title") {
+            console.log(photos);
+            photos.sort(function(a, b) {
+                var x = a.title.toLowerCase();
+                var y = b.title.toLowerCase();
+                if (x < y) {return -1;}
+                if (x > y) {return 1;}
+                return 0;
+            });
+            console.log(photos);
+        } else {
+            console.log(selection);
+        }
+        document.getElementById('photoDiv').innerHTML = "";
+        displayPhotos();
+    });
+    console.log(photos);
+
 });
