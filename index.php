@@ -35,10 +35,31 @@
             </section>
             <section class="col-sm-12 col-md-6 col-lg-8">
                 <main>
-                    <h3>NASA photos</h3>
-                    <p>Blast off.</p>
+                    <h3>Photos curated by NASA.</h3>
+                    <div id="topOptions" class="d-flex justify-content-between flex-wrap">
+                        <div class="topOption">
+                            Show photos from album:
+                            <!-- Album dropdown -->
+                            <select>
+                                <option value="all">All</option>
+                                <option value="album1">album1</option>
+                            </select>
+                        </div>
+                        <div class="topOption">
+                            Photos sorted by
+                            <!-- Misc filters dropdown -->
+                            <select>
+                                <option value="popularity">Popularity</option>
+                                <option value="takenDateNew">Date taken (Newest first)</option>
+                                <option value="takenDateOld">Date taken (Oldest first)</option>
+                                <option value="alphabetical">Alphabetical (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
 
-                    <div id="photoDiv"></div>
+                    <div id="photoContainer">
+                        <div id="photoDiv"></div>
+                    </div>
                 </main>
             </section>
             <section class="col-sm-12 col-md-3 col-lg-2">
@@ -49,7 +70,7 @@
 
 
         <footer>
-            <div>Lauren Li 2018</div>
+            <div id="footerDiv">Lauren Li 2018</div>
         </footer>
     </div>  <!-- /container-fluid div -->
     <!-- Scripts -->

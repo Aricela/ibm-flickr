@@ -29,7 +29,7 @@ $(document).ready(function() {
         for (let i = 0; i < photos.length; i++) {
             let title = photos[i].title;
             let imgURL = 'https://farm' + photos[i].farm + '.staticflickr.com/' + photos[i].server + '/' + photos[i].id + '_' + photos[i].secret + '.jpg';
-            $('#photoDiv').append('<img src = "' + imgURL + '" alt = "' + title + '" title = "' + title + '">');
+            $('#photoDiv').append('<img src = "' + imgURL + '" alt = "' + title + '" title = "' + title + '"><span>' + title +'</span>');
         }
     }
 
