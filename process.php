@@ -26,7 +26,7 @@
 </header>
 
 <p>Used <a href="https://kraken.io/web-interface" target="_blank">kraken.io </a> to reduce image size.</p>
-<div id="photoDiv"></div>
+<p>Background image by qimono from Pixabay (<a href="https://pixabay.com/en/sunrise-space-outer-space-globe-1756274/" target="_blank">link)</a></p>
 <!-- Scripts -->
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
