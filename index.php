@@ -51,8 +51,8 @@
                             Photos sorted by
                             <!-- Miscellaneous sort dropdown -->
                             <select id="miscSort">
-                                <option value="takenDateNew" selected="selected">Date taken (Newest first)</option>
-                                <option value="takenDateOld">Date taken (Oldest first)</option>
+                                <option value="takenDateNew" selected="selected">Most recent first</option>
+                                <option value="takenDateOld">Oldest first</option>
                                 <option value="popularity">Popularity</option>
                                 <option value="title">Title (A-Z)</option>
                             </select>

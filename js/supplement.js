@@ -46,7 +46,9 @@ $(document).ready(function() {
         $.get(infoStr, function(data) {
             photoObj["description"] = data.photo.description;
             photoObj["takenDate"] = data.photo.dates.taken;
+            console.log("taken date " + typeof(photoObj["takenDate"]));
             photoObj["views"] = data.photo.views;
+            console.log("views " + typeof(photoObj["views"]));
         });
     }
 
@@ -57,14 +59,22 @@ $(document).ready(function() {
         switch (selection) {
             default:
                 // Sort by date (most recent first)
-                var test="test";
+                photos.sort(function(a, b) {
+                    x = new Date(a.takenDate);
+                    y = new Date(b.takenDate);
+                    if (x > y) {return -1;}
+                    if (x < y) {return 1;}
+                    return 0;
+                });
+                break;
+            case "takenDateOld":
                 break;
             case "popularity":
                 // Sort by views, in descending order
                 photos.sort(function(a,b) {return b.views - a.views});
                 break;
             case "title":
-                // Sort by title string
+                // Sort by title string a-z
                 console.log(photos);
                 photos.sort(function(a, b) {
                     var x = a.title.toLowerCase();
