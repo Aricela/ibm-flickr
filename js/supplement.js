@@ -2,6 +2,7 @@ $(document).ready(function() {
     var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=a5e95177da353f58113fd60296e1d250&user_id=24662369@N07&format=json&nojsoncallback=1";
     var photos = [];
 
+    // Get photos
     $.get(flickrStr, function(data){
        fetchPhotos(data);
        console.log(photos.length);
@@ -10,6 +11,7 @@ $(document).ready(function() {
 
     console.log(photos.length);
 
+    // Take items from returned Flickr array and put them into local photos array
     function fetchPhotos(data) {
         var numPhotos = data.photos.photo.length;
         for (let i = 0; i < numPhotos; i++) {
@@ -25,6 +27,7 @@ $(document).ready(function() {
         }
     }
 
+    // How to display the photos
     function displayPhotos() {
         for (let i = 0; i < photos.length; i++) {
             let title = photos[i].title;
@@ -33,6 +36,7 @@ $(document).ready(function() {
         }
     }
 
+    // When user clicks on one of choices in the miscellaneous dropdown, sort by the choice
     $('#miscSort').change(function() {
         var selection = this.value;  // get selected value
         console.log(photos.length);
