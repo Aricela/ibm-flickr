@@ -24,9 +24,34 @@
         <h1>SPACE</h1>
         <h2>The Final Frontier</h2>
     </header>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="col-sm-12 col-md-3 col-lg-2">
+                <h3>Nav</h3>
+                <ul>
+                    <li>Link 1</li>
+                    <li><a href="process.php">Process</a></li>
+                </ul>
+            </section>
+            <section class="col-sm-12 col-md-6 col-lg-8">
+                <main>
+                    <h3>NASA photos</h3>
+                    <p>Blast off.</p>
 
-    <p>Blast off.</p>
-    <div id="photoDiv"></div>
+                    <div id="photoDiv"></div>
+                </main>
+            </section>
+            <section class="col-sm-12 col-md-3 col-lg-2">
+                <h3>Tags to filter by</h3>
+                tag tag
+            </section>
+        </div> <!-- /Row div -->
+
+
+        <footer>
+            <div>Lauren Li 2018</div>
+        </footer>
+    </div>  <!-- /container-fluid div -->
     <!-- Scripts -->
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

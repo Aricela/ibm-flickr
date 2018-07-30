@@ -30,6 +30,11 @@ header {
     background-size: 100% 100%;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Small devices (landscape phones, 576px and up) <-- Material Design Bootstrap presets*/
 @media (min-width: 576px) and (max-width: 767px) {
     h1 {
