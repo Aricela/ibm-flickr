@@ -9,7 +9,6 @@ h1 {
     font-size: 3rem;
     font-family: 'Audiowide', sans-serif;
     text-align: center;
-    padding-top: 1rem;
 }
 
 h2 {
@@ -22,6 +21,13 @@ h2 {
     -ms-transform:scale(2,1); /* IE 9 */
     -o-transform:scale(2,1); /* Opera */
     transform:scale(2,1); /* W3C */
+}
+
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-image: url("../img/qimono-pixabay-640x320-kraken.jpg");
+    background-size: 100% 100%;
 }
 
 /* Small devices (landscape phones, 576px and up) <-- Material Design Bootstrap presets*/
@@ -38,6 +44,11 @@ h2 {
         -ms-transform:scale(3,1); /* IE 9 */
         -o-transform:scale(3,1); /* Opera */
         transform:scale(3,1); /* W3C */
+    }
+
+    header {
+        background-image: url("../img/qimono-pixabay-1920x960-kraken.jpg");
+        background-size: 100% 100%;
     }
 }
 
