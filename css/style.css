@@ -30,6 +30,20 @@ header {
     background-size: 100% 100%;
 }
 
+header a, nav a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover, nav a:hover {
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    line-height: 3;
+}
+
 img {
     max-width: 100%;
     height: auto;

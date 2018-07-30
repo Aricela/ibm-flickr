@@ -21,18 +21,20 @@
 </head>
 <body>
     <header>
-        <h1>SPACE</h1>
-        <h2>The Final Frontier</h2>
+        <a href="index.php">
+            <h1>SPACE</h1>
+            <h2>The Final Frontier</h2>
+        </a>
     </header>
     <div class="container-fluid">
         <div class="row">
-            <section class="col-sm-12 col-md-3 col-lg-2">
+            <nav class="col-sm-12 col-md-3 col-lg-2">
                 <h3>Nav</h3>
                 <ul>
-                    <li>Link 1</li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="process.php">Process</a></li>
                 </ul>
-            </section>
+            </nav>
             <section class="col-sm-12 col-md-6 col-lg-8">
                 <main>
                     <h3>Photos curated by NASA.</h3>
@@ -49,9 +51,9 @@
                             Photos sorted by
                             <!-- Miscellaneous sort dropdown -->
                             <select id="miscSort">
-                                <option value="popularity" selected="selected">Popularity</option>
-                                <option value="takenDateNew">Date taken (Newest first)</option>
+                                <option value="takenDateNew" selected="selected">Date taken (Newest first)</option>
                                 <option value="takenDateOld">Date taken (Oldest first)</option>
+                                <option value="popularity">Popularity</option>
                                 <option value="title">Title (A-Z)</option>
                             </select>
                         </div>
