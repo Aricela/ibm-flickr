@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=a5e95177da353f58113fd60296e1d250&user_id=24662369@N07&format=json&nojsoncallback=1";
+    var apiKey = "a5e95177da353f58113fd60296e1d250";
+    var nasaId = "24662369@N07";
+    var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=" + apiKey + "&user_id=" + nasaId + "&format=json&nojsoncallback=1";
     var photos = [];
     var tags = [];
 
@@ -37,6 +39,12 @@ $(document).ready(function() {
         }
     }
 
+    // Get metadata for a photo
+    function getMetadata(photoID) {
+        let infoStr = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=a5e95177da353f58113fd60296e1d250&photo_id=" + photoID + "&format=json&nojsoncallback=1";
+        return infoStr;
+    }
+
     // When user clicks on one of choices in the miscellaneous dropdown, sort by the choice
     $('#miscSort').change(function() {
         var selection = this.value;  // get selected value
@@ -56,7 +64,11 @@ $(document).ready(function() {
         } else {
             console.log(selection);
         }
+
+        // Empty photoDiv to prepare for sorted photos
         document.getElementById('photoDiv').innerHTML = "";
+
+        // Show sorted photos
         displayPhotos();
     });
     console.log(photos);

@@ -21,12 +21,33 @@
 </head>
 <body>
 <header>
-    <h1>SPACE</h1>
-    <h2>The Final Frontier</h2>
+    <a href="index.php">
+        <h1>SPACE</h1>
+        <h2>The Final Frontier</h2>
+    </a>
 </header>
-<p>Used <a href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Material Design Bootstrap framework.</a></p>
-<p>Used <a href="https://kraken.io/web-interface" target="_blank">kraken.io </a> to reduce image size.</p>
-<p>Background image by qimono from Pixabay (<a href="https://pixabay.com/en/sunrise-space-outer-space-globe-1756274/" target="_blank">link)</a></p>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-12 col-md-3 col-lg-2">
+            <h3>Nav</h3>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="process.php">Process</a></li>
+            </ul>
+        </nav>
+        <section class="col-sm-12 col-md-9 col-lg-10">
+            <main>
+                <h3>My process for creating this site:</h3>
+                <p>Used <a href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Material Design Bootstrap framework.</a></p>
+                <p>Used <a href="https://kraken.io/web-interface" target="_blank">kraken.io </a> to reduce image size.</p>
+                <p>Background image by qimono from Pixabay (<a href="https://pixabay.com/en/sunrise-space-outer-space-globe-1756274/" target="_blank">link)</a></p>
+            </main>
+        </section>
+    </div> <!-- /Row div -->
+    <footer>
+        <div id="footerDiv">Lauren Li 2018</div>
+    </footer>
+</div>  <!-- /container-fluid div -->
 <!-- Scripts -->
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
