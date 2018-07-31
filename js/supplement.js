@@ -54,16 +54,13 @@ $(document).ready(function() {
             // Get tags
             var photoTags = [];
             //console.log(data.photo.tags);
-            var tagObj = data.photo.tags;
-            console.log(Object.values(tagObj));
-            /*Object.keys(tagObj).forEach(function(key) {
-                //photoTags.push(item.raw);
-                //console.log(photoTags);
-                console.log(tagObj[key[raw]]);
-            });*/
+            var tagObj = data.photo.tags.tag;
+            tagObj.forEach(function(item) {
+                photoTags.push(item.raw);
+            });
 
             // Put tags into into photoObj
-            photoObj["tags"] = ["tag a", "tag b"];
+            photoObj["tags"] = photoTags;
 
         });
     }
