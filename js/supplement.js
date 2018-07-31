@@ -3,7 +3,7 @@ $(document).ready(function() {
     var nasaId = "24662369@N07";
     var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=" + apiKey + "&user_id=" + nasaId + "&format=json&nojsoncallback=1";
     var photos = [];
-    var tagList = [];
+    var tagsList = [];
 
     // Get photos
     $.get(flickrStr, function(data){
@@ -62,19 +62,12 @@ $(document).ready(function() {
             // Put tags into into photoObj
             photoObj["tags"] = photoTags;
 
-        });
-    }
-
-    // Sort by "Taken on" date (most recent first)
-    // This gets its own function since it's used twice: once at page load, and then again
-    // if user selects to sort by Most Recent First
-    function mostRecentFirst(){
-        photos.sort(function(a, b) {
-            x = new Date(a.takenDate);
-            y = new Date(b.takenDate);
-            if (x > y) {return -1;}
-            if (x < y) {return 1;}
-            return 0;
+            // If tags are not already in tagsList, add them
+            photoTags.forEach(function(tag) {
+                if ($.inArray(tag, tagsList) == -1) {
+                    tagsList.push(tag);
+                }
+            });
         });
     }
 
