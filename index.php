@@ -48,12 +48,12 @@
                             </select>
                         </div>
                         <div class="topOption">
-                            Photos sorted by
+                            Sort photos by
                             <!-- Miscellaneous sort dropdown -->
                             <select id="miscSort">
-                                <option value="takenDateNew" selected="selected">Most recent first</option>
-                                <option value="takenDateOld">Oldest first</option>
-                                <option value="popularity">Popularity</option>
+                                <option value="takenDateNew" selected="selected">Most Recent First</option>
+                                <option value="takenDateOld">Oldest First</option>
+                                <option value="popularity">Most Popular</option>
                                 <option value="title">Title (A-Z)</option>
                             </select>
                         </div>

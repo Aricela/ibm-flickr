@@ -52,6 +52,19 @@ $(document).ready(function() {
         });
     }
 
+    // Sort by "Taken on" date (most recent first)
+    // This gets its own function since it's used twice: once at page load, and then again
+    // if user selects to sort by Most Recent First
+    function mostRecentFirst(){
+        photos.sort(function(a, b) {
+            x = new Date(a.takenDate);
+            y = new Date(b.takenDate);
+            if (x > y) {return -1;}
+            if (x < y) {return 1;}
+            return 0;
+        });
+    }
+
     // When user clicks on one of choices in the miscellaneous dropdown, sort by the choice
     $('#miscSort').change(function() {
         var selection = this.value;  // get selected value
@@ -68,6 +81,13 @@ $(document).ready(function() {
                 });
                 break;
             case "takenDateOld":
+                photos.sort(function(a, b) {
+                    x = new Date(a.takenDate);
+                    y = new Date(b.takenDate);
+                    if (x < y) {return -1;}
+                    if (x > y) {return 1;}
+                    return 0;
+                });
                 break;
             case "popularity":
                 // Sort by views, in descending order
