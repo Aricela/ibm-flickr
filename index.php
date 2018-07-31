@@ -21,21 +21,22 @@
 </head>
 <body>
     <header>
-        <a href="index.php">
+        <div id="banner">
             <h1>SPACE</h1>
             <h2>The Final Frontier</h2>
-        </a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="process.php">Process</a>
+            </li>
+        </ul>
     </header>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-sm-12 col-md-3 col-lg-2">
-                <h3>Nav</h3>
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="process.php">Process</a></li>
-                </ul>
-            </nav>
-            <section class="col-sm-12 col-md-6 col-lg-8">
+            <section class="col-sm-12 col-md-9 col-lg-10">
                 <main>
                     <h3>Photos curated by NASA.</h3>
                     <div id="topOptions">
@@ -58,7 +59,10 @@
             </section>
             <section class="col-sm-12 col-md-3 col-lg-2">
                 <h3>Tags to filter by</h3>
-                tag tag
+                <div id="tagsDiv">
+                    <button type="button" class="btn btn-mdb-color btn-sm tagButton" value="space">space</button>
+                    <button type="button" class="btn btn-mdb-color btn-sm tagButton" value="nasa">nasa</button>
+                </div>
             </section>
         </div> <!-- /Row div -->
 

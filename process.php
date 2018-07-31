@@ -21,26 +21,27 @@
 </head>
 <body>
 <header>
-    <a href="index.php">
+    <div id="banner">
         <h1>SPACE</h1>
         <h2>The Final Frontier</h2>
-    </a>
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="process.php">Process</a>
+        </li>
+    </ul>
 </header>
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-sm-12 col-md-3 col-lg-2">
-            <h3>Nav</h3>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="process.php">Process</a></li>
-            </ul>
-        </nav>
         <section class="col-sm-12 col-md-9 col-lg-10">
             <main>
                 <h3>My process for creating this site:</h3>
                 <p>Used <a href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">Material Design Bootstrap framework.</a></p>
                 <p>Used <a href="https://kraken.io/web-interface" target="_blank">kraken.io </a> to reduce image size.</p>
-                <p>Background image by qimono from Pixabay (<a href="https://pixabay.com/en/sunrise-space-outer-space-globe-1756274/" target="_blank">link)</a></p>
+                <p>Background image by qimono from Pixabay (<a href="https://pixabay.com/en/sunrise-space-outer-space-globe-1756274/" target="_blank">link</a>)</p>
             </main>
         </section>
     </div> <!-- /Row div -->

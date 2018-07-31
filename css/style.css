@@ -15,6 +15,7 @@ h2 {
     display: block;
     font-size: 1rem;
     text-align: center;
+    paddng-bottom: 1rem;
     /* Letter stretching, from https://stackoverflow.com/questions/6351013/css-can-i-stretch-text */
     -webkit-transform:scale(2,1); /* Safari and Chrome */
     -moz-transform:scale(2,1); /* Firefox */
@@ -23,11 +24,13 @@ h2 {
     transform:scale(2,1); /* W3C */
 }
 
+h3 {
+    padding-bottom: 1rem;
+}
+
 header {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-image: url("../img/qimono-pixabay-640x320-kraken.jpg");
-    background-size: 100% 100%;
 }
 
 header a, nav a {
@@ -37,6 +40,11 @@ header a, nav a {
 
 header a:hover, nav a:hover {
     color: white;
+}
+
+#banner {
+    background-image: url("../img/qimono-pixabay-640x320-kraken.jpg");
+    background-size: 100% 100%;
 }
 
 nav ul {
@@ -74,9 +82,8 @@ img {
         transform:scale(3,1); /* W3C */
     }
 
-    header {
+    #banner {
         background-image: url("../img/qimono-pixabay-1920x960-kraken.jpg");
-        background-size: 100% 100%;
     }
 }
 

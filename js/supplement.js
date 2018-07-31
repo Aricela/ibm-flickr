@@ -71,6 +71,15 @@ $(document).ready(function() {
         });
     }
 
+    tagsList.sort();  // Sort tagsList alphabetically
+
+    // Put tagsList items in the tagsDiv
+    var tagsDiv = document.getElementById('tagsDiv');
+    for (var i = 0; i < tagsList.length; i++) {
+        tagsDiv.innerHTML = tagsDiv.innerHTML + tagsList[i];
+    }
+    console.log(tagsList);
+
     // When user clicks on one of choices in the miscellaneous dropdown, sort by the choice
     $('#miscSort').change(function() {
         var selection = this.value;  // get selected value
@@ -117,6 +126,14 @@ $(document).ready(function() {
         // Show sorted photos
         displayPhotos();
     });
-    console.log(photos);
 
+    // Tag filtering
+    $('.tagButton').click(function(){
+        for (var i=0; i<photos.length; i++) {
+            if ($.inArray(this.value, photos[i].tags) == -1) {
+                console.log(this.value);
+            }
+         }
+    });
+    console.log(photos);
 });
