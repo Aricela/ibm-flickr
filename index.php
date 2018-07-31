@@ -38,15 +38,7 @@
             <section class="col-sm-12 col-md-6 col-lg-8">
                 <main>
                     <h3>Photos curated by NASA.</h3>
-                    <div id="topOptions" class="d-flex justify-content-between flex-wrap">
-                        <div class="topOption">
-                            Show photos from album:
-                            <!-- Album dropdown -->
-                            <select id="albumFilter">
-                                <option value="all">All</option>
-                                <option value="album1">album1</option>
-                            </select>
-                        </div>
+                    <div id="topOptions">
                         <div class="topOption">
                             Sort photos by
                             <!-- Miscellaneous sort dropdown -->

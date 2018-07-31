@@ -3,7 +3,7 @@ $(document).ready(function() {
     var nasaId = "24662369@N07";
     var flickrStr = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=" + apiKey + "&user_id=" + nasaId + "&format=json&nojsoncallback=1";
     var photos = [];
-    var photosMetadata = [];
+    var tagList = [];
 
     // Get photos
     $.get(flickrStr, function(data){
@@ -44,11 +44,27 @@ $(document).ready(function() {
     function getMetadata(photoObj) {
         let infoStr = "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=a5e95177da353f58113fd60296e1d250&photo_id=" + photoObj.id + "&format=json&nojsoncallback=1";
         $.get(infoStr, function(data) {
+            // Get most of metadata
             photoObj["description"] = data.photo.description;
             photoObj["takenDate"] = data.photo.dates.taken;
-            console.log("taken date " + typeof(photoObj["takenDate"]));
+            //console.log("taken date " + typeof(photoObj["takenDate"]));
             photoObj["views"] = data.photo.views;
-            console.log("views " + typeof(photoObj["views"]));
+            //console.log("views " + typeof(photoObj["views"]));
+
+            // Get tags
+            var photoTags = [];
+            //console.log(data.photo.tags);
+            var tagObj = data.photo.tags;
+            console.log(Object.values(tagObj));
+            /*Object.keys(tagObj).forEach(function(key) {
+                //photoTags.push(item.raw);
+                //console.log(photoTags);
+                console.log(tagObj[key[raw]]);
+            });*/
+
+            // Put tags into into photoObj
+            photoObj["tags"] = ["tag a", "tag b"];
+
         });
     }
 
@@ -104,20 +120,6 @@ $(document).ready(function() {
                     return 0;
                 });
         }
-        // Sort by string (for title)
-        /*if (selection == "title") {
-            console.log(photos);
-            photos.sort(function(a, b) {
-                var x = a.title.toLowerCase();
-                var y = b.title.toLowerCase();
-                if (x < y) {return -1;}
-                if (x > y) {return 1;}
-                return 0;
-            });
-            console.log(photos);
-        } else {
-            console.log(selection);
-        }*/
 
         // Empty photoDiv to prepare for sorted photos
         document.getElementById('photoDiv').innerHTML = "";
